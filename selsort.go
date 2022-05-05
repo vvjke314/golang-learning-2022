@@ -1,16 +1,14 @@
 package algs
 
 func SelectSort(arr []int) []int {
-	sortArr := make([]int, len(arr))
-	var max int = arr[0]
-	for j, _ := range sortArr {
-		for i, _ := range arr {
+	var max, index int = arr[0], 0
+	for j, _ := range arr {
+		for i := j; i < len(arr)-1; i++ {
 			if arr[i] > max {
-				max = arr[i]
+				index = i
 			}
 		}
-		sortArr[j] = max
-		max = arr[j]
+		arr[j], arr[index] = arr[index], arr[j]
 	}
-	return sortArr
+	return arr
 }
