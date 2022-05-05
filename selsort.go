@@ -10,6 +10,7 @@ func SelectSort(arr []int) []int {
 			}
 		}
 		sortArr[j] = max
+		max = arr[j]
 	}
 	return sortArr
 }
